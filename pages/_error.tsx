@@ -31,7 +31,7 @@ const Error = ({ statusCode }: { statusCode: number }) => {
 								i18nKey={t(getTextKey(statusCode, "subtitle"))}
 								t={t}
 								components={[
-									<Text href={{ link: "/" }} style={{ textDecoration: "underline dotted" }} weight={300} size="1.1rem">{t("words.home")}</Text>,
+									<Text href={{ link: "/" }} style={{ textDecoration: "underline dotted" }} weight={300} size="1.1rem" key={1}>{t("words.home")}</Text>,
 								]}
 							></Trans>
 						</Text>

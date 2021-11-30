@@ -13,6 +13,7 @@ interface Props {
 	inline?: boolean;
 	style?: React.CSSProperties;
 	className?: string;
+	key?: any;
 }
 
 const Text: React.FC<Props> = (props: Props) => {
@@ -30,9 +31,9 @@ const Text: React.FC<Props> = (props: Props) => {
 		<>
 			{
 				props.href ?
-					<a style={style} href={props.href.link} target={props.href.openNew ? "_blank" : ""} rel="noreferrer" className={props.className}>{props.children}</a>
+					<a style={style} key={props.key} href={props.href.link} target={props.href.openNew ? "_blank" : ""} rel="noreferrer" className={props.className}>{props.children}</a>
 					:
-					<div style={style} className={props.className}>{props.children}</div>
+					<div style={style} key={props.key} className={props.className}>{props.children}</div>
 			}
 		</>
 	)
