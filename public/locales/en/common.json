@@ -18,7 +18,7 @@
 		"status_codes": {
 			"404": {
 				"title": "Looks like this page doesn't seems to exist — maybe you took a wrong turn?",
-				"subtitle": "<1>Anyway, it's pretty scary out here, we should really go back</1> <0>home</0>"
+				"subtitle": "Anyway, it's pretty scary out here, we should really go back <0>home</0>"
 			},
 			"500": {
 				"title": "We seem to be having a bit of trouble on our end.",
@@ -26,7 +26,7 @@
 			},
 
 			"title": "Woah, looks like there was an error.",
-			"subtitle": "Try going back <0>{{home}}</0>, otherwise, check back later to see if it has been resolved."
+			"subtitle": "Try going back <0>home</0>, otherwise, check back later to see if it's been resolved."
 		}
 		
 	},

@@ -26,14 +26,15 @@ const Error = ({ statusCode }: { statusCode: number }) => {
 					<Text weight={300} size="1.3rem">{t(getTextKey(statusCode, "title"))}</Text>
 
 					<div>
-						<Trans
-							i18nKey={t(getTextKey(statusCode, "subtitle"))}
-							t={t}
-							components={[
-								<Text inline href={{ link: "/" }} style={{ textDecoration: "underline dotted" }} weight={300} size="1.1rem">{t("words.home")}</Text>,
-								<Text inline weight={300} size="1.1rem">{t(getTextKey(statusCode, "subtitle"))}</Text>
-							]}
-						></Trans>
+						<Text inline weight={300} size="1.1rem">
+							<Trans
+								i18nKey={t(getTextKey(statusCode, "subtitle"))}
+								t={t}
+								components={[
+									<Text href={{ link: "/" }} style={{ textDecoration: "underline dotted" }} weight={300} size="1.1rem">{t("words.home")}</Text>,
+								]}
+							></Trans>
+						</Text>
 					</div>
 				</div>
 			</div>

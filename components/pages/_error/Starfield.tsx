@@ -40,6 +40,7 @@ const Starfield: React.FC = () => {
 		update() {
 			this.pz = this.z;
 			this.z -= this.speed;
+
 			if (this.z < 1) {
 				this.x = random(-center.x, center.x);
 				this.y = random(-center.y, center.y);
@@ -57,7 +58,7 @@ const Starfield: React.FC = () => {
 
 			const radius = map(this.z, 0, center.x, 5, 0);
 
-			ctx.strokeStyle = "rgb(250, 250, 250)";
+			ctx.strokeStyle = "rgba(250, 250, 250, 0.3)";
 			ctx.lineWidth = radius;
 
 			ctx.beginPath();
