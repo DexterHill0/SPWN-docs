@@ -1,0 +1,15 @@
+{
+	"header": {
+		"try": "Try",
+		"docs": "Docs",
+		"learn": "Learn"
+	},
+	"front_page": {
+		"short_desc": "A language for Geometry Dash triggers",
+		"short_credit": "By Spu7Nix",
+		"get_started": "Get Started!",
+		"learn_more": "(or learn more about SPWN below)",
+		"os_error": "This OS is not currently supported by SPWN - maybe in the future!",
+		"download_now": "D O W N L O A D \u00A0\u00A0N O W"
+	}
+}

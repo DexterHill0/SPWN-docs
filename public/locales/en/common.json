@@ -1,0 +1,37 @@
+{
+	"header": {
+		"try": "Try",
+		"docs": "Docs",
+		"learn": "Learn"
+	},
+	"front_page": {
+		"short_desc": "A language for Geometry Dash triggers",
+		"short_credit": "By Spu7Nix",
+		"get_started": "Get Started!",
+		"learn_more": "(or learn more about SPWN below)",
+		"download_now": "D O W N L O A D \u00A0\u00A0N O W"
+	},
+
+	"errors": {
+		"unsupported_os": "This OS is not currently supported by SPWN — maybe in the future!",
+
+		"status_codes": {
+			"404": {
+				"title": "Looks like this page doesn't seems to exist — maybe you took a wrong turn?",
+				"subtitle": "<1>Anyway, it's pretty scary out here, we should really go back</1> <0>home</0>"
+			},
+			"500": {
+				"title": "We seem to be having a bit of trouble on our end.",
+				"subtitle": "Try checking back later, and hopefully we'll have everything fixed up!"
+			},
+
+			"title": "Woah, looks like there was an error.",
+			"subtitle": "Try going back <0>{{home}}</0>, otherwise, check back later to see if it has been resolved."
+		}
+		
+	},
+
+	"words": {
+		"home": "home"
+	}
+}
