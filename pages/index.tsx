@@ -13,6 +13,7 @@ import { getOS, join, open } from "../utils/Utils";
 import AnimateOnEnter from "../utils/InView";
 
 import styles from "../styles/pages/Home.module.scss";
+import LanguageSelector from "../components/LanguageSelect";
 
 export { getLocaleTranslations as getServerSideProps } from "../locales/helper";
 
@@ -30,13 +31,17 @@ const Home: React.FC = () => {
 		<>
 			<title>SPWN - Home</title>
 			<meta name="Description" content="SPWN — A language for Geometry Dash triggers, developed by Spu7Nix." />
-			
+
 			<div className={styles.topHalf}>
 				<Header>
-					<Text href={{ link: "learn" }} size="1.3rem">{t("header.learn")}</Text>
-					<Text href={{ link: "docs" }} size="1.3rem">{t("header.docs")}</Text>
-					<Text href={{ link: "https://spu7nix.net/spwn/try/", openNew: true }} size="1.3rem">{t("header.try")}</Text>
+					<Text href={{ link: "learn" }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.learn")}</Text>
+					<Text href={{ link: "docs" }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.docs")}</Text>
+					<Text href={{ link: "https://spu7nix.net/spwn/try/", openNew: true }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.try")}</Text>
 				</Header>
+
+				<div className={styles.languageSelector}>
+					<LanguageSelector></LanguageSelector>
+				</div>
 
 				<div className={styles.topHalfFlexContainer}>
 					<div className={styles.topHalfFlexLeft}>
@@ -53,7 +58,9 @@ const Home: React.FC = () => {
 								}}
 							>
 								{({ opacity, left }) =>
-									<LargeSpwnText style={{ opacity, left }}></LargeSpwnText>
+									<div className={styles.largeSpwnContainer}>
+										<LargeSpwnText style={{ opacity, left }}></LargeSpwnText>
+									</div>
 								}
 							</Animate>
 
@@ -97,8 +104,8 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 					</div>
-
-					<div className={styles.topHalfFlexRight}></div>
+{/* 
+					<div className={styles.topHalfFlexRight}></div> */}
 				</div>
 
 				<i

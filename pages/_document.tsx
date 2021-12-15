@@ -16,6 +16,7 @@ class _Document extends Document {
 
 					<link href="https://css.gg/chevron-left.css" rel="stylesheet" />
 					<link href="https://css.gg/chevron-right.css" rel="stylesheet" />
+					<link href="https://css.gg/chevron-down.css" rel="stylesheet" />
 					<link href="https://css.gg/search.css" rel="stylesheet" />
 					<link href="https://css.gg/chevron-double-down.css" rel="stylesheet" />
 				</Head>

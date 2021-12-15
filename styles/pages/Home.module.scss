@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-$header-ignore-padding: 4rem;
+$header-ignore-padding: 5rem;
 
 .topHalfFlexContainer, .botHalfFlexContainer {
 	padding: 0 20px 0 20px;
@@ -11,6 +11,12 @@ $header-ignore-padding: 4rem;
 	height: 100%;
 	background: $main-background;
 	overflow: hidden;
+}
+
+.languageSelector {
+	padding-top: calc(#{$header-ignore-padding} - 0.6rem);
+	position: absolute;
+	right: 2rem;
 }
 
 .topHalfFlexContainer {
@@ -54,6 +60,10 @@ $header-ignore-padding: 4rem;
 	.topHalfFlexLeft {
 		margin-left: 0;
 		align-items: center;
+	}
+
+	.largeSpwnContainer {
+		text-align: center;
 	}
 
 	.downloadContainer {
