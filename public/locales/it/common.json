@@ -1,0 +1,33 @@
+{
+	"header": {
+		"try": "Provalo",
+		"docs": "Documentazione",
+		"learn": "Impara"
+	},
+	"front_page": {
+		"short_desc": "Un linguaggio di programmazione per trigger di Geometry Dash",
+		"short_credit": "Creato da Spu7Nix",
+		"get_started": "Iniziamo!",
+		"learn_more": "(oppure scopri di più da SPWN qui sotto)",
+		"os_error": "Questo sistema operativo non è supportato da SPWN - forse lo sarà in futuro!",
+		"download_now": "S C A R I C A \u00A0\u00A0O R A"
+	},
+	"errors": {
+		"unsupported_os": "This OS is not currently supported by SPWN — maybe in the future!",
+		"status_codes": {
+			"404": {
+				"title": "Looks like this page doesn't seems to exist — maybe you took a wrong turn?",
+				"subtitle": "Anyway, it's pretty scary out here, we should really go back <0>home</0>"
+			},
+			"500": {
+				"title": "We seem to be having a bit of trouble on our end.",
+				"subtitle": "Try checking back later, and hopefully we'll have everything fixed up!"
+			},
+			"title": "Woah, looks like there was an error.",
+			"subtitle": "Try going back <0>home</0>, otherwise, check back later to see if it's been resolved."
+		}
+	},
+	"words": {
+		"home": "home"
+	}
+}

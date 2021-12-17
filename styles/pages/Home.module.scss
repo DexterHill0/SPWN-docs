@@ -1,0 +1,134 @@
+@import "../variables.scss";
+
+$header-ignore-padding: 5rem;
+
+.topHalfFlexContainer, .botHalfFlexContainer {
+	padding: 0 20px 0 20px;
+}
+
+.topHalf {
+	width: 100%;
+	height: 100%;
+	background: $main-background;
+	overflow: hidden;
+}
+
+.languageSelector {
+	padding-top: calc(#{$header-ignore-padding} - 0.6rem);
+	position: absolute;
+	right: 2rem;
+}
+
+.topHalfFlexContainer {
+	display: flex;
+	height: inherit;
+	flex-wrap: wrap;
+	padding-top: $header-ignore-padding;
+}
+
+.topHalfFlexLeft {
+	flex: 1 1 40rem;
+	margin-left: 4.5rem;
+	max-width: 40rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.downloadContainer {
+	padding-top: 5rem;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.topHalfFlexRight {
+	flex: 1 0 20rem;
+}
+
+.topHalfDoubleChevron {
+	color: $text-color;
+	position: absolute;
+	transform: translate(-50%, -50%) scale(2);
+	left: 50%;
+	bottom: 10px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.botHalf {
+	width: 100%;
+	height: calc(100% - #{$header-ignore-padding});
+	padding-top: #{$header-ignore-padding / 2};
+	background: $main-background;
+	overflow-x: hidden;
+}
+
+.botHalfFlexContainer {
+	display: flex;
+	height: inherit;
+}
+
+.botHalfFlexLeft {
+	height: 100%;
+	flex: 2 1 auto;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.botHalfFlexRight {
+	flex: 1.3 2 25rem;
+	min-width: 35rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.infoContainer {
+	display: grid; 
+	grid-template-rows: 0fr 0fr 0fr;
+	grid-gap: 1.7rem;
+	grid-template-areas: 
+		"title"
+		"text"
+		"invite"
+		"text2";
+	margin: 10px;
+}
+
+@media (max-width: 1000px) {
+	.botHalfFlexContainer {
+		justify-content: center;
+	}
+
+	.botHalfFlexLeft {
+		flex: 0 0 0;
+		visibility: hidden;
+	}
+
+	.demosText {
+		visibility: hidden;
+	}
+}
+
+@media (max-width: 700px) {
+	.topHalfFlexLeft {
+		margin-left: 0;
+		align-items: center;
+	}
+
+	.largeSpwnContainer {
+		text-align: center;
+	}
+
+	.downloadContainer {
+		text-align: center;
+	}
+
+	.botHalfFlexRight {
+		min-width: 15rem;
+	}
+}
