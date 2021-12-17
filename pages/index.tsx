@@ -14,6 +14,7 @@ import AnimateOnEnter from "../utils/InView";
 
 import styles from "../styles/pages/Home.module.scss";
 import LanguageSelector from "../components/LanguageSelect";
+import SpwnDemos from "../components/pages/home/SpwnDemos";
 
 export { getLocaleTranslations as getServerSideProps } from "../locales/helper";
 
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
 						<div className={styles.downloadContainer}>
 							<div style={{ flex: "0 0 auto" }}>
 								<>
-									<Text weight={600} size="2rem">{t("front_page.get_started")} <Text inline style={{ opacity: 0.5 }}>{t("front_page.learn_more")}</Text></Text>
+									<Text weight={600} size="2rem">{t("front_page.get_started")} <Text size="1rem" inline style={{ opacity: 0.5 }}>{t("front_page.learn_more")}</Text></Text>
 									{
 										os === undefined ?
 											<Text weight={400} italic size="0.9rem">{t("errors.unsupported_os")}</Text>
@@ -117,7 +118,9 @@ const Home: React.FC = () => {
 				<div ref={r => { if (r) anchor.current = r }}></div>
 
 				<div className={styles.botHalfFlexContainer}>
-					<div className={styles.botHalfFlexLeft}></div>
+					<div className={styles.botHalfFlexLeft}>
+						<SpwnDemos></SpwnDemos>
+					</div>
 
 					<div className={styles.botHalfFlexRight}>
 						<AnimateOnEnter>
@@ -130,24 +133,28 @@ const Home: React.FC = () => {
 									timing: { duration: 1000 },
 								}}
 							>
-								{({ opacity }) =>
+								{({ opacity }) => 
 									<div className={styles.infoContainer} style={{ opacity }}>
-										<Text size="2.2rem" weight={300} style={{ textDecoration: "underline", gridArea: "title" }}>About SPWN</Text>
+										<Text size="min(max(1.9rem, 5vw), 2.2rem)" weight={300} style={{ textDecoration: "underline", gridArea: "title" }}>About SPWN</Text>
 
-										<Text size="1.1rem" style={{ gridArea: "text" }}>
-											SPWN, developed by <Text size="1.1rem" style={{ textDecoration: "underline dotted" }} inline href={{ link: "https://www.youtube.com/c/Spu7Nix/featured", openNew: true }}>Spu7Nix</Text>, is a programming language that compiles straight to Geometry Dash levels.
+										<Text size="min(max(0.8rem, 2vw), 1.1rem)" style={{ gridArea: "text" }}>
+											SPWN, developed by <Text style={{ textDecoration: "underline dotted" }} inline href={{ link: "https://www.youtube.com/c/Spu7Nix/featured", openNew: true }}>Spu7Nix</Text>, and named after the spawn trigger, is a programming language that compiles straight to Geometry Dash levels.
 											<br /><br />
 											In simple terms, this means you can create levels not by placing objects in the level editor, but by typing characters into your favourite text editor!
-											That means you can create levels by not only using the visual representation of triggers in the Geometry Dash Editor, but using a &quot;verbal&quot; and abstracted representation instead.
-											This is especially useful when using triggers for complicated projects, since the in-game editor is not well suited for that, and doesn&apos;t provide the tools you would need to make it work properly, without many headaches.
+											<br />
+											SPWN is a &quot;verbal&quot; and abstracted representation of Geometry Dash triggers which is especially useful when using triggers for complicated projects, since the in-game editor is not well suited for that, and doesn&apos;t provide the tools you would need to make it work properly, without many headaches.
 											<br /><br />
-											Click <Text weight={600} size="1.1rem" inline>Learn</Text> in the header to learn how to begin your adventure with SPWN.
-											Otherwise, If you have any questions, or need help, check out the docs, or feel free to join us in the official SPWN Discord server!
+											Click <Text weight={600} inline>Learn</Text> in the header to learn how to begin your adventure with SPWN.
+											Otherwise, If you have any questions, or need help, check out the docs, or feel free to reach out to us in the official SPWN Discord server!
 										</Text>
 
 										<div style={{ gridArea: "invite", justifySelf: "center" }}>
 											<InviteWidget></InviteWidget>
 										</div>
+
+										<Text size="min(max(0.8rem, 2vw), 1.1rem)" style={{ gridArea: "text2" }} className={styles.demosText}>
+											In the meantime, check out some of the SPWN demos, and their trigger representations, on the left!
+										</Text>
 									</div>
 								}
 							</Animate>

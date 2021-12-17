@@ -5,10 +5,20 @@
 	font-family: "Meta";
 }
 
-* {
+
+*:not(code):not(pre) {
 	font-family: "Meta", sans-serif, "Exo 2", sans-serif;
 	font-style: normal;
 	font-weight: normal;
+}
+
+code, pre, .hljs * {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.hljs {
+	background: transparent;
 }
 
 body {
@@ -17,7 +27,3 @@ body {
 	scroll-behavior: smooth;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
-}

@@ -35,7 +35,7 @@ const LanguageSelector: React.FC = () => {
 	const onChange = (e: any) => {
 		setLang(getLanguageOption(e.value));
 		
-		Router.push(`/?lang=${e.value}`, undefined, { shallow: true });
+		Router.push(`/?lang=${e.value}`);
 	}
 
 	const styles = {
@@ -67,7 +67,7 @@ const LanguageSelector: React.FC = () => {
 		singleValue: (provided: any) => ({
 			...provided,
 			color: "#ffffff",
-			fontSize: "min(max(0.7rem, 2vw), 1rem)"
+			fontSize: "min(max(0.8rem, 2vw), 1rem)"
 		}),
 		indicatorsContainer: (provided: any) => ({
 			...provided,

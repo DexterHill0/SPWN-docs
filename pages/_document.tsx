@@ -19,6 +19,7 @@ class _Document extends Document {
 					<link href="https://css.gg/chevron-down.css" rel="stylesheet" />
 					<link href="https://css.gg/search.css" rel="stylesheet" />
 					<link href="https://css.gg/chevron-double-down.css" rel="stylesheet" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/railscasts.min.css" />
 				</Head>
 				<body style={{ height: "100%" }}>
 					<style>{"#__next {height: 100%}"}</style>

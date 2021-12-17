@@ -19,7 +19,7 @@ interface Props {
 const Text: React.FC<Props> = (props: Props) => {
 
 	const style = {
-		fontSize: props.size || "1rem",
+		fontSize: props.size || "inherit",
 		fontVariationSettings: `'wght' ${props.weight || 400}, 'ital' ${props.italic ? "1" : "0"}`,
 		display: props.inline ? "inline-block" : "",
 		color: "white",

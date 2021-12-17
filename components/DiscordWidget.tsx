@@ -68,12 +68,12 @@ const InviteWidget: React.FC = () => {
 							}}
 							enter={{
 								opacity: [1],
-								timing: { duration: 1000, delay: 0 },
+								timing: { duration: 2000, delay: 0 },
 							}}
 						>
 							{({ opacity }) =>
 								<div style={{ opacity }}>
-									<Image src={a} alt="" width={30} height={30} className={styles.avatar}></Image>
+									<img src={a} alt="" width={30} height={30} className={styles.avatar} loading="lazy"></img>
 								</div>
 							}
 						</Animate>

@@ -11,7 +11,7 @@ const AnimateOnEnter: React.FC<Props> = (props: Props) => {
 	return (
 		<InView triggerOnce>
 			{({ ref, inView }) =>
-				<div ref={ref}>{React.cloneElement(props.children, { show: inView })}</div>
+				<div ref={ref} style={{width: "100%", height: "100%"}}>{React.cloneElement(props.children, { show: inView })}</div>
 			}
 		</InView>
 	)
