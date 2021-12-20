@@ -10,12 +10,12 @@
 }
 
 .container {
-	background: $main-background;
+	background: $dark-900;
 	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: $text-color;
+	color: $text;
 	font-size: 30px;
 }
 

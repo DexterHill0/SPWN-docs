@@ -39,14 +39,14 @@ $anim-speed: 3;
 			z-index: 4;
 		}
 		&:nth-child(2) {
-			color: $spwn-green-light !important;
+			color: $spwn-g-light !important;
 			transform: translate(MIN(0.8vw, 5px), MIN(0.8vw, 5px));
 			z-index: 3;
 
 			@include move-shadows(MIN(0.8vw, 5px), MIN(1.5vw, 10px));
 		}
 		&:nth-child(3) {
-			color: $spwn-green !important;
+			color: $spwn-g !important;
 			transform: translate(MIN(1.1vw, 7px), MIN(1.1vw, 7px));
 			z-index: 2;
 
@@ -55,7 +55,7 @@ $anim-speed: 3;
 			@include move-shadows(MIN(1.1vw, 7px), MIN(2.5vw, 20px));
 		}
 		&:nth-child(4) {
-			color: $spwn-purple !important;
+			color: $spwn-p !important;
 			transform: translate(MIN(1.4vw, 9px), MIN(1.4vw, 9px));
 			z-index: 1;
 
@@ -64,7 +64,7 @@ $anim-speed: 3;
 			@include move-shadows(MIN(1.4vw, 9px), MIN(3.5vw, 30px));
 		}
 		&:nth-child(5) {
-			color: $spwn-purple-light !important;
+			color: $spwn-p-light !important;
 			transform: translate(MIN(1.7vw, 11px), MIN(1.7vw, 11px));
 			z-index: 0;
 

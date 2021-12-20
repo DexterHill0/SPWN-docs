@@ -12,7 +12,7 @@ $padding: 10px;
 .container {
 	height: var(--widget-height);
 	width: var(--widget-width);
-	background: $mono-tint3;
+	background: $dark-300;
 	border-radius: $padding;
 	display: flex;
 	flex-direction: column;
@@ -29,7 +29,7 @@ $padding: 10px;
 	height: var(--dark-height);
 	width: 4rem;
 	border-top-left-radius: $padding;
-	background: $mono-tint2;
+	background: $dark-700;
 	display: inline-flex;
 	align-items: center;
 	padding-left: $padding;
@@ -38,7 +38,7 @@ $padding: 10px;
 .infoContainer {
 	height: var(--dark-height);
 	width: 100%;
-	background: $mono-tint2;
+	background: $dark-700;
 	border-top-right-radius: $padding;
 	display: inline-flex;
 	align-items: center;

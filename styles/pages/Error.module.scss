@@ -28,7 +28,7 @@
 }
 
 .glitch {
-	color: $text-color !important;
+	color: $text !important;
 	font-size: 4rem;
 	font-variation-settings: "wght" 700;
 	text-decoration: none;
@@ -47,13 +47,13 @@
 	&::after {
 		animation: glitch-bottom 1.5s linear infinite;
  		clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-		text-shadow: -1px 0 $spwn-green-light;
+		text-shadow: -1px 0 $spwn-g-light;
 	}
 
 	&::before {
 		animation: glitch-top 1s linear infinite;
   		clip-path: polygon(0 0, 100% 0, 100% 60%, 0 33%);
-		text-shadow: 2px 1px $spwn-purple-light;
+		text-shadow: 2px 1px $spwn-p-light;
 	}
 
 }

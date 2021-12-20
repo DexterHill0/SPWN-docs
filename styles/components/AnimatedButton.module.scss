@@ -34,7 +34,7 @@ $anim-speed: 2.2;
 		&:nth-child(2) {
 			top: 0;
 			height: $outline-width;
-			background: $spwn-green-light;
+			background: $spwn-g-light;
 			width: 100%;
 			transform: translateX(-115%);
 
@@ -43,7 +43,7 @@ $anim-speed: 2.2;
 		&:nth-child(4) {
 			bottom: 0;
 			height: $outline-width;
-			background: $spwn-purple-light;
+			background: $spwn-p-light;
 			width: 100%;
 			transform: translateX(100%);
 
@@ -52,7 +52,7 @@ $anim-speed: 2.2;
 		&:nth-child(3) {
 			right: 0;
 			width: $outline-width;
-			background: $spwn-green-light;
+			background: $spwn-g-light;
 			height: 100%;
 			transform: translateY(-105%);
 
@@ -62,7 +62,7 @@ $anim-speed: 2.2;
 		&:nth-child(5) {
 			left: 0;
 			width: $outline-width;
-			background: $spwn-purple-light;
+			background: $spwn-p-light;
 			height: 100%;
 			transform: translateY(100%);
 
@@ -76,19 +76,19 @@ $anim-speed: 2.2;
 
 		span {
 			&:nth-child(2) {
-				box-shadow: 0px 5px 10px 0px $spwn-green;
+				box-shadow: 0px 5px 10px 0px $spwn-g;
 			}
 
 			&:nth-child(3) {
-				box-shadow: -5px 0px 10px 0px $spwn-green;
+				box-shadow: -5px 0px 10px 0px $spwn-g;
 			}
 
 			&:nth-child(4) {
-				box-shadow: 0px -5px 10px 0px $spwn-purple;
+				box-shadow: 0px -5px 10px 0px $spwn-p;
 			}
 
 			&:nth-child(5) {
-				box-shadow: 5px 0px 10px 0px $spwn-purple;
+				box-shadow: 5px 0px 10px 0px $spwn-p;
 			}
 		}
 	}

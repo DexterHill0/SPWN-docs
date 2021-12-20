@@ -1,7 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 
 import styles from "../styles/components/Header.module.scss";
+
+
+const HeaderPadding: React.FC = () => {
+
+	return (
+		<div className={styles.headerPadding}></div>
+	)
+}
 
 interface Props {
 	children: React.ReactNode[] | React.ReactNode;
@@ -30,22 +37,25 @@ const Header: React.FC<Props> = (props: Props) => {
 	}, []);
 
 	return (
-		<div className={styles.headerContainer} ref={(r) => { if (r) ref.current = r; }}>
-			<div style={{ paddingLeft: "0.5rem" }}>
-				<Image src="/assets/spwn_logo_small.png" alt="" width={35} height={35}></Image>
-			</div>
+		<div style={{ display: "grid" }}>
+			<HeaderPadding></HeaderPadding>
+			
+			<div className={styles.headerContainer} ref={(r) => { if (r) ref.current = r; }}>
+				<img src="/assets/spwn_logo_small.png" alt="" width={35} height={35} style={{paddingLeft: "1rem"}}></img>
 
-			<div className={styles.headerLinkContainer}>
-				{
-					React.Children.toArray(props.children).map((c, i) =>
-						<div key={i} className={styles.headerLink}>
-							{c}
-						</div>
-					)
-				}
+				<div className={styles.headerLinkContainer}>
+					{
+						React.Children.toArray(props.children).map((c, i) =>
+							<div key={i} className={styles.headerLink}>
+								{c}
+							</div>
+						)
+					}
+				</div>
 			</div>
 		</div>
 	)
 }
 
 export default Header;
+export { HeaderPadding };

@@ -9,12 +9,11 @@ $header-ignore-padding: 5rem;
 .topHalf {
 	width: 100%;
 	height: 100%;
-	background: $main-background;
+	background: $dark-900;
 	overflow: hidden;
 }
 
 .languageSelector {
-	padding-top: calc(#{$header-ignore-padding} - 0.6rem);
 	position: absolute;
 	right: 2rem;
 }
@@ -23,7 +22,6 @@ $header-ignore-padding: 5rem;
 	display: flex;
 	height: inherit;
 	flex-wrap: wrap;
-	padding-top: $header-ignore-padding;
 }
 
 .topHalfFlexLeft {
@@ -47,7 +45,7 @@ $header-ignore-padding: 5rem;
 }
 
 .topHalfDoubleChevron {
-	color: $text-color;
+	color: $text;
 	position: absolute;
 	transform: translate(-50%, -50%) scale(2);
 	left: 50%;
@@ -60,7 +58,7 @@ $header-ignore-padding: 5rem;
 	width: 100%;
 	height: calc(100% - #{$header-ignore-padding});
 	padding-top: #{$header-ignore-padding / 2};
-	background: $main-background;
+	background: $dark-900;
 	overflow-x: hidden;
 }
 

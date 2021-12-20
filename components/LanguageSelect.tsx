@@ -41,7 +41,7 @@ const LanguageSelector: React.FC = () => {
 	const styles = {
 		container: (provided: any) => ({
 			...provided,
-			zIndex: 9999,
+			zIndex: 9,
 		}),
 		control: (provided: any) => ({
 			...provided,
