@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 
 import styles from "../styles/components/Header.module.scss";
 
@@ -7,7 +6,7 @@ interface Props {
 	children: React.ReactNode[] | React.ReactNode;
 }
 
-const height = 3.7;
+const height = 4;
 
 const Header: React.FC<Props> = (props: Props) => {
 	const ref = useRef<HTMLDivElement>();
@@ -30,19 +29,23 @@ const Header: React.FC<Props> = (props: Props) => {
 	}, []);
 
 	return (
-		<div className={styles.headerContainer} ref={(r) => { if (r) ref.current = r; }}>
-			<div style={{ paddingLeft: "0.5rem" }}>
-				<Image src="/assets/spwn_logo_small.png" alt="" width={35} height={35}></Image>
-			</div>
+		<div className="grid">
+			<div className="w-full h-20 bg-transparent"></div>
+			<div
+				ref={(r) => { if (r) ref.current = r; }}
+				className="absolute z-[999] flex items-center w-full h-16 border-b-2 bg-dark-900 border-dark-800"
+			>
+				<img className="pl-4" src="/assets/spwn_logo_small.png" alt="" width={50} height={50}></img>
 
-			<div className={styles.headerLinkContainer}>
-				{
-					React.Children.toArray(props.children).map((c, i) =>
-						<div key={i} className={styles.headerLink}>
-							{c}
-						</div>
-					)
-				}
+				<div className="flex items-center justify-end w-full pl-4 pr-4">
+					{
+						React.Children.toArray(props.children).map((c, i) =>
+							<div key={i} className="flex justify-end pr-4 flex-[0.2_2_auto]">
+								{c}
+							</div>
+						)
+					}
+				</div>
 			</div>
 		</div>
 	)

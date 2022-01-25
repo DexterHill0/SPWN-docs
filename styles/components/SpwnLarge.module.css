@@ -1,0 +1,67 @@
+.container {
+	--ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1)
+}
+
+@keyframes ms-c1 {
+	from { transform: translate(var(--c1-min), var(--c1-min)) }
+	to { transform: translate(var(--c1-max), var(--c1-max)) }	
+}
+
+.child1 {
+	animation: ms-c1 3.5s var(--ease-in-out-expo) alternate-reverse infinite;
+}
+
+@keyframes ms-c2 {
+	from { transform: translate(var(--c2-min), var(--c2-min)) }
+	to { transform: translate(var(--c2-max), var(--c2-max)) }	
+}
+
+.child2 {
+	animation: ms-c2 3.5s var(--ease-in-out-expo) alternate-reverse infinite;
+}
+
+@keyframes ms-c3 {
+	from { transform: translate(var(--c3-min), var(--c3-min)) }
+	to { transform: translate(var(--c3-max), var(--c3-max)) }	
+}
+
+.child3 {
+	animation: ms-c3 3.5s var(--ease-in-out-expo) alternate-reverse infinite;
+}
+
+@keyframes ms-c4 {
+	from { transform: translate(var(--c4-min), var(--c4-min)) }
+	to { transform: translate(var(--c4-max), var(--c4-max)) }	
+}
+
+.child4 {
+	animation: ms-c4 3.5s var(--ease-in-out-expo) alternate-reverse infinite;
+}
+
+@media screen(sm) {
+	.container {
+		--c1-min: 2px; --c1-max: 3px;
+		--c2-min: 4px; --c2-max: 10px;
+		--c3-min: 6px; --c3-max: 17px;
+		--c4-min: 8px; --c4-max: 24px;	
+	}
+}
+
+
+@media screen(md) {
+	.container {
+		--c1-min: 3px; --c1-max: 4px;
+		--c2-min: 5px; --c2-max: 14px;
+		--c3-min: 7px; --c3-max: 24px;
+		--c4-min: 9px; --c4-max: 34px;
+	}
+}
+
+@media screen(lg) {
+	.container {
+		--c1-min: 4px; --c1-max: 10px;
+		--c2-min: 6px; --c2-max: 20px;
+		--c3-min: 8px; --c3-max: 30px;
+		--c4-min: 10px; --c4-max: 40px;
+	}
+}

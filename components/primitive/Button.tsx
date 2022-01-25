@@ -1,10 +1,7 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
-	width: string;
-	height: string;
-
-	style?: React.CSSProperties;
 	onClick?: (event: any) => void;
 	children?: React.ReactNode;
 	className?: string;
@@ -12,18 +9,11 @@ interface Props {
 
 const Button: React.FC<Props> = (props: Props) => {
 
+	const styles = twMerge("text-txt border-0 cursor-pointer", props.className);
+
 	return (
 		<button
-			className={props.className}
-			style={{
-				cursor: "pointer",
-				color: "white",
-				width: props.width,
-				height: props.height,
-				border: "none",
-
-				...props.style
-			}}
+			className={styles}
 			onClick={props.onClick}
 		>
 			{props.children}

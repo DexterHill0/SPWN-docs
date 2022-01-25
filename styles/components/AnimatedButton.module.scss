@@ -97,9 +97,19 @@ $anim-speed: 2.2;
 	}
 }
 
-.button {
-	position: absolute;
-	background: transparent;
-	font-size: 1rem;
-	border: none;
+
+.child1 {
+	@include move-outline(X, -115%, 110%, 0);
+}
+
+.child2 {
+	@include move-outline(Y, -105%, 115%, 0.25);
+}
+
+.child3 {
+	@include move-outline(X, 100%, -115%, 0.55);
+}
+
+.child4 {
+	@include move-outline(Y, 100%, -115%, 0.8);
 }

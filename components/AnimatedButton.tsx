@@ -2,6 +2,8 @@ import React from "react";
 
 import Button from "./primitive/Button";
 
+import { join } from "../utils/Utils";
+
 import styles from "../styles/components/AnimatedButton.module.scss";
 
 interface Props {
@@ -14,25 +16,32 @@ interface Props {
 
 const AnimatedButton: React.FC<Props> = (props: Props) => {
 
-	return (
-		<div className={styles.buttonContainer} style={{
-			width: props.width,
-			height: props.height
-		}}>
-			<Button
-				width={props.width}
-				height={props.height}
-				onClick={props.onClick}
+	const constant = "absolute block";
 
-				className={styles.button}
+	return (
+		<div
+			className="relative flex items-center justify-center overflow-hidden group opacity-80 hover:opacity-100 active:opacity-80"
+			style={{ width: props.width, height: props.height }}
+		>
+			<Button
+				onClick={props.onClick}
+				className={join(`w-[${props.width}] h-[${props.height}]`, "absolute bg-transparent text-bs border-0")}
 			>
 				{props.children}
 			</Button>
 
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<span
+				className={join(constant, "top-0 h-[3px] w-full bg-spwn-g-light group-hover:shadow-[0_5px_10px_0_#05c286] -translate-x-[115%]", styles.child1)}
+			></span>
+			<span
+				className={join(constant, "right-0 w-[3px] h-full bg-spwn-g-light group-hover:shadow-[-5px_0_10px_0_#05c286] -translate-y-[105%]", styles.child2)}
+			></span>
+			<span
+				className={join(constant, "bottom-0 h-[3px] w-full bg-spwn-p-light group-hover:shadow-[0_-5px_10px_0_#e421a6] translate-x-[100%]", styles.child3)}
+			></span>
+			<span
+				className={join(constant, "left-0 w-[3px] h-full bg-spwn-p-light group-hover:shadow-[5px_0_10px_0_#e421a6] translate-y-[100%]", styles.child4)}
+			></span>
 		</div>
 	)
 }
