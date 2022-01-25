@@ -1,37 +1,50 @@
-import express, { Request, Response } from "express";
+import express, { ErrorRequestHandler, Request, Response } from "express";
 import next from "next";
 //import subdomain from "express-subdomain";
 
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== "production";
 
-const next_app = next({ dev });
+const nextApp = next({ dev });
 const app = express();
 
-const handle = next_app.getRequestHandler();
+const handle = nextApp.getRequestHandler();
+
+const handleError: ErrorRequestHandler = (err, _, res, next) => {
+	if (res.headersSent) next(err);
+	else {
+		console.error(err);
+		res.status(500);
+		res.json({
+			message: "Whoops! An error has unexpectedly occured our end. Check back soon, and in the meantime, report the error on our github page!"
+		})
+	}
+}
 
 const main = async () => {
-	await next_app.prepare();
+	await nextApp.prepare();
 
-	const spwn_it = express.Router();
-	const try_spwn_it = express.Router();
+	app.disable("x-powered-by");
+	app.use(handleError);
 
-	spwn_it.get("*", (req: Request, res: Response) => {
+	const spwnIt = express.Router();
+	//const trySpwnIt = express.Router();
+
+	spwnIt.get("*", (req: Request, res: Response) => {
 		console.log(req.subdomains);
 		return handle(req, res);
 	});
 
-	// try_spwn_it.get("*", (_: Request, res: Response) => {
+	// trySpwnIt.get("*", (_: Request, res: Response) => {
 	// 	return res.send("I am a working subdomain!")
 	// });
 
-	// spwn_it.use(subdomain("try", try_spwn_it));
+	// spwn_it.use(subdomain("try", trySpwnIt));
 
-	app.use(spwn_it);
-	//app.use(try_spwn_it);
+	app.use(spwnIt);
+	//app.use(trySpwnIt);
 
 	app.listen(port, (err?: any) => {
-		if (err) throw err;
 		console.log(`> Ready on http://localhost:${port}`);
 	});
 }
