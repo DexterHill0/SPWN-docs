@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 const random = (min: number, max: number): number => {
 	return Math.floor(min + (Math.random() * (max - min)));
@@ -9,7 +9,6 @@ const map = (value: number, inMin: number, inMax: number, outMin: number, outMax
 }
 
 const starCount = 350;
-const mouseMMultiplier = 0.1;
 
 const Starfield: React.FC = () => {
 

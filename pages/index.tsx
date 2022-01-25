@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useTranslation } from "next-i18next";
 import { Animate } from "react-move";
 import { easePolyOut } from "d3-ease";
@@ -9,7 +9,7 @@ import AnimatedButton from "../components/AnimatedButton";
 import LargeSpwnText from "../components/pages/home/SpwnLarge";
 import InviteWidget from "../components/DiscordWidget";
 
-import { getOS, join, open } from "../utils/Utils";
+import { open } from "../utils/Utils";
 import AnimateOnEnter from "../utils/InView";
 
 import styles from "../styles/pages/Home.module.scss";
@@ -23,30 +23,25 @@ const Home: React.FC = () => {
 
 	const anchor = useRef<HTMLDivElement>();
 
-	const [os, setOS] = useState<string | undefined>(undefined);
-	useEffect(() => {
-		setOS(getOS());
-	}, []);
-
 	return (
 		<>
 			<title>SPWN - Home</title>
 			<meta name="Description" content="SPWN — A language for Geometry Dash triggers, developed by Spu7Nix." />
 
-			<div className={styles.topHalf}>
+			<div className="w-full h-full overflow-hidden bg-dark-900">
 				<Header>
-					<Text href={{ link: "learn" }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.learn")}</Text>
-					<Text href={{ link: "docs" }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.docs")}</Text>
-					<Text href={{ link: "https://spu7nix.net/spwn/try/", openNew: true }} size="min(max(1rem, 4vw), 1.3rem)">{t("header.try")}</Text>
+					<Text href={{ link: "learn" }}>{t("header.learn")}</Text>
+					<Text href={{ link: "docs" }}>{t("header.docs")}</Text>
+					<Text href={{ link: "https://spu7nix.net/spwn/try/", openNew: true }}>{t("header.try")}</Text>
 				</Header>
 
-				<div className={styles.languageSelector}>
+				<div className="absolute right-10 sm:right-5">
 					<LanguageSelector></LanguageSelector>
 				</div>
 
-				<div className={styles.topHalfFlexContainer}>
-					<div className={styles.topHalfFlexLeft}>
-						<div>
+				<div className="flex flex-wrap h-full px-3">
+					<div className="flex flex-col w-auto sm:w-full sm:items-center md:ml-12 lg:ml-20">
+						<div className="sm:text-center">
 							<Animate
 								start={{
 									opacity: 0,
@@ -59,7 +54,7 @@ const Home: React.FC = () => {
 								}}
 							>
 								{({ opacity, left }) =>
-									<div className={styles.largeSpwnContainer}>
+									<div className="text-left sm:text-center">
 										<LargeSpwnText style={{ opacity, left }}></LargeSpwnText>
 									</div>
 								}
@@ -77,48 +72,55 @@ const Home: React.FC = () => {
 								>
 									{({ opacity }) =>
 										<>
-											<Text size="min(max(1.2rem, 3vw), 1.6rem)" weight={300} style={{ opacity }}>{t("front_page.short_desc")}</Text>
-											<Text size="min(max(1rem, 3vw), 1.2rem)" weight={200} style={{ opacity: opacity - 0.5 }}>{t("front_page.short_credit")}</Text>
+											<Text className="font-light" style={{ opacity }}>{t("front_page.short_desc")}</Text>
+											<Text className="font-light" style={{ opacity: opacity - 0.5 }}>{t("front_page.short_credit")}</Text>
 										</>
 									}
 								</Animate>
 							</AnimateOnEnter>
 						</div>
 
-						<div className={styles.downloadContainer}>
-							<div style={{ flex: "0 0 auto" }}>
-								<>
-									<Text weight={600} size="2rem">{t("front_page.get_started")} <Text size="1rem" inline style={{ opacity: 0.5 }}>{t("front_page.learn_more")}</Text></Text>
-									{
-										os === undefined ?
-											<Text weight={400} italic size="0.9rem">{t("errors.unsupported_os")}</Text>
-											: <></>
-									}
-								</>
+						<div className="flex flex-col pt-20 text-left sm:text-center sm:pt-8">
+							<div>
+								<Text className="font-bold sm:text-sm">{t("front_page.get_started")}
+									&nbsp;<Text className="text-sm opacity-50 lg:text-sm" inline>{t("front_page.learn_more")}</Text>
+								</Text>
 							</div>
-							<div style={{ flex: "0 0 auto", paddingTop: "2rem" }}>
+							<div className="flex justify-start pt-8 sm:justify-center">
 								<AnimatedButton width="18rem" height="3rem"
 									onClick={() => open("https://github.com/Spu7Nix/SPWN-language/releases")}
 								>
-									<Text>{t("front_page.download_now")}</Text>
+									<Text className="text-sm md:text-sm lg:text-sm">{t("front_page.download_now")}</Text>
 								</AnimatedButton>
 							</div>
 						</div>
 					</div>
-{/* 
-					<div className={styles.topHalfFlexRight}></div> */}
 				</div>
-
-				<i
-					className={join("gg-chevron-double-down", styles.topHalfDoubleChevron)}
-					onClick={() => window.scroll({ top: (anchor.current?.getBoundingClientRect().top || 0) + window.scrollY, behavior: "smooth" })}
-				></i>
+				{/* <div className="animate-bounce scale-200 text-txt absolute -translate-y-1/2 -translate-x-1/2 left-1/2 bottom-2.5 cursor-pointer">
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M7.75735 5.63605L6.34314 7.05026L12 12.7071L17.6569 7.05029L16.2427 5.63608L12 9.87872L7.75735 5.63605Z"
+							fill="currentColor"
+						/>
+						<path
+							d="M6.34314 12.7071L7.75735 11.2929L12 15.5356L16.2427 11.2929L17.6569 12.7071L12 18.364L6.34314 12.7071Z"
+							fill="currentColor"
+						/>
+					</svg>
+				</div> */}
 			</div>
-			<div className={styles.botHalf}>
-				<div ref={r => { if (r) anchor.current = r }}></div>
+			<div className="w-full h-full overflow-x-hidden bg-dark-900">
+				{/* <div className="w-full h-20 bg-transparent"></div>
+				<div ref={r => { if (r) anchor.current = r }}></div> */}
 
-				<div className={styles.botHalfFlexContainer}>
-					<div className={styles.botHalfFlexLeft}>
+				<div className="flex">
+					<div className="flex-[3_1_auto] flex items-center h-full">
 						<SpwnDemos></SpwnDemos>
 					</div>
 
@@ -133,7 +135,7 @@ const Home: React.FC = () => {
 									timing: { duration: 1000 },
 								}}
 							>
-								{({ opacity }) => 
+								{({ opacity }) =>
 									<div className={styles.infoContainer} style={{ opacity }}>
 										<Text size="min(max(1.9rem, 5vw), 2.2rem)" weight={300} style={{ textDecoration: "underline", gridArea: "title" }}>About SPWN</Text>
 

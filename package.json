@@ -1,34 +1,44 @@
 {
-	"name": "spwn_docs",
+	"name": "spwn.it",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
+		"dev": "nodemon _server/index.ts",
+		"dev:next": "next dev",
+		"build:server": "tsc --project tsconfig.server.json",
+		"build:next": "next build",
+		"build": "npm run build:next && npm run build:server"
 	},
 	"dependencies": {
 		"@types/react-dom": "^17.0.11",
+		"autoprefixer": "^10.4.0",
 		"d3-ease": "^3.0.1",
+		"express": "^4.17.2",
+		"express-subdomain": "^1.0.5",
 		"i18next": "^21.5.3",
 		"markdown-to-jsx": "^7.1.3",
 		"next": "12.0.4",
 		"next-i18next": "^9.2.0",
 		"node-sass": "^6.0.1",
+		"postcss": "^8.4.5",
 		"react": "17.0.2",
 		"react-dom": "^17.0.2",
 		"react-highlight": "^0.14.0",
 		"react-intersection-observer": "^8.32.5",
 		"react-move": "^6.5.0",
-		"react-select": "^5.2.1"
+		"react-select": "^5.2.1",
+		"tailwind-merge": "^1.1.1",
+		"tailwindcss": "^3.0.6"
 	},
 	"devDependencies": {
 		"@types/d3-ease": "^3.0.0",
+		"@types/express": "^4.17.13",
 		"@types/node": "16.11.10",
 		"@types/react": "17.0.37",
 		"@types/react-highlight": "^0.12.5",
 		"eslint": "7.32.0",
 		"eslint-config-next": "12.0.4",
+		"nodemon": "^2.0.15",
+		"ts-node": "^10.4.0",
 		"typescript": "4.5.2"
 	}
 }
