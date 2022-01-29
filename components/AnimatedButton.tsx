@@ -25,7 +25,8 @@ const AnimatedButton: React.FC<Props> = (props: Props) => {
 		>
 			<Button
 				onClick={props.onClick}
-				className={join(`w-[${props.width}] h-[${props.height}]`, "absolute bg-transparent text-bs border-0")}
+				className="absolute bg-transparent border-0 text-bs"
+				style={{ width: props.width, height: props.height }}
 			>
 				{props.children}
 			</Button>

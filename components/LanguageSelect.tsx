@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import Select, { components } from "react-select";
-import { IndicatorsContainer } from "react-select/dist/declarations/src/components/containers";
 
 type Option = { value: string; label: string; };
 
@@ -31,7 +30,11 @@ const LanguageSelector: React.FC = () => {
 	}
 
 	const makeComponent = (Component: any, styles: string) => {
-		return (props: any) => <Component {...props} className={styles}></Component>
+		// eslint cant figure out the component's display name here
+		// I set it anyway to avoid issues but suppressing the error means `next build` works
+
+		// eslint-disable-next-line react/display-name
+		return (props: any) => <Component {...props} displayName={Component.name} className={styles}></Component>
 	}
 
 	useEffect(() => {

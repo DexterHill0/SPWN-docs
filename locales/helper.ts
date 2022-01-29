@@ -12,8 +12,8 @@ const isLocaleSupported = (locale: string | undefined): boolean => {
 	return Object.keys(Locales).includes(locale || "");
 }
 
-export async function getLocaleTranslations({ query: { lang } }: { query: { lang: string } }) {
-	const lcl = isLocaleSupported(lang) ? lang : defaultLocale.toString();
+export async function getLocaleTranslations({ locale }: { locale: string }) {
+	const lcl = isLocaleSupported(locale) ? locale : defaultLocale.toString();
 
 	return {
 		props: {

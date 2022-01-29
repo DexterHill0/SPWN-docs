@@ -21,14 +21,12 @@ export { getLocaleTranslations as getServerSideProps } from "../locales/helper";
 const Home: React.FC = () => {
 	const { t } = useTranslation("common");
 
-	const anchor = useRef<HTMLDivElement>();
-
 	return (
 		<>
 			<title>SPWN - Home</title>
 			<meta name="Description" content="SPWN — A language for Geometry Dash triggers, developed by Spu7Nix." />
 
-			<div className="w-full h-full overflow-hidden bg-dark-900">
+			<div className="w-screen h-screen overflow-hidden bg-dark-900">
 				<Header>
 					<Text href={{ link: "learn" }}>{t("header.learn")}</Text>
 					<Text href={{ link: "docs" }}>{t("header.docs")}</Text>
@@ -83,7 +81,7 @@ const Home: React.FC = () => {
 						<div className="flex flex-col pt-20 text-left sm:text-center sm:pt-8">
 							<div>
 								<Text className="font-bold sm:text-sm">{t("front_page.get_started")}
-									&nbsp;<Text className="text-sm opacity-50 lg:text-sm" inline>{t("front_page.learn_more")}</Text>
+									&nbsp;<Text className="text-sm opacity-50 lg:text-xsm" inline>{t("front_page.learn_more")}</Text>
 								</Text>
 							</div>
 							<div className="flex justify-start pt-8 sm:justify-center">
@@ -115,7 +113,7 @@ const Home: React.FC = () => {
 					</svg>
 				</div> */}
 			</div>
-			<div className="w-full h-full overflow-x-hidden bg-dark-900">
+			<div className="w-screen h-screen overflow-x-hidden bg-dark-900">
 				{/* <div className="w-full h-20 bg-transparent"></div>
 				<div ref={r => { if (r) anchor.current = r }}></div> */}
 
@@ -136,25 +134,25 @@ const Home: React.FC = () => {
 								}}
 							>
 								{({ opacity }) =>
-									<div className={styles.infoContainer} style={{ opacity }}>
-										<Text size="min(max(1.9rem, 5vw), 2.2rem)" weight={300} style={{ textDecoration: "underline", gridArea: "title" }}>About SPWN</Text>
+									<div className="grid grid-cols-1 grid-rows-3 m-3 gap-7" style={{ opacity }}>
+										<Text className="font-light underline">About SPWN</Text>
 
-										<Text size="min(max(0.8rem, 2vw), 1.1rem)" style={{ gridArea: "text" }}>
-											SPWN, developed by <Text style={{ textDecoration: "underline dotted" }} inline href={{ link: "https://www.youtube.com/c/Spu7Nix/featured", openNew: true }}>Spu7Nix</Text>, and named after the spawn trigger, is a programming language that compiles straight to Geometry Dash levels.
+										<Text className="font-light lg:text-md">
+											SPWN, developed by <Text inline className="font-light underline lg:text-md" href={{ link: "https://www.youtube.com/c/Spu7Nix/featured", openNew: true }}>Spu7Nix</Text>, and named after the spawn trigger, is a programming language that compiles straight to Geometry Dash levels.
 											<br /><br />
 											In simple terms, this means you can create levels not by placing objects in the level editor, but by typing characters into your favourite text editor!
 											<br />
 											SPWN is a &quot;verbal&quot; and abstracted representation of Geometry Dash triggers which is especially useful when using triggers for complicated projects, since the in-game editor is not well suited for that, and doesn&apos;t provide the tools you would need to make it work properly, without many headaches.
 											<br /><br />
-											Click <Text weight={600} inline>Learn</Text> in the header to learn how to begin your adventure with SPWN.
+											Click <Text inline className="lg:text-md">Learn</Text> in the header to learn how to begin your adventure with SPWN.
 											Otherwise, If you have any questions, or need help, check out the docs, or feel free to reach out to us in the official SPWN Discord server!
 										</Text>
 
-										<div style={{ gridArea: "invite", justifySelf: "center" }}>
+										<div className="justify-self-center">
 											<InviteWidget></InviteWidget>
 										</div>
 
-										<Text size="min(max(0.8rem, 2vw), 1.1rem)" style={{ gridArea: "text2" }} className={styles.demosText}>
+										<Text className="font-light lg:text-md">
 											In the meantime, check out some of the SPWN demos, and their trigger representations, on the left!
 										</Text>
 									</div>

@@ -10,8 +10,8 @@ const LargeSpwnText: React.FC<{ style: React.CSSProperties }> = ({ style }) => {
 
 	const shared = "font-ital-black row-start-1 col-start-1 lg:text-[13rem] md:text-[10rem] sm:text-[7rem]";
 
-	//originally this was done with 4 animated text shadows however, not only was that horrible in terms of performace (25 - 40% gpu usage), it caused weird artifacts
-	//on mobile too, so this is a much better way, even though the code is uglier.
+	// originally this was done with 4 animated text shadows however, but it had bad performance and caused weird artifacts
+	// on mobile too, so this is a much better way, even though the code is uglier.
 	return (
 		<div
 			className={join("select-none relative grid grid-cols-1", styles.container)}

@@ -5,7 +5,7 @@ import { appWithTranslation } from "next-i18next";
 
 import "../styles/globals.css";
 
-const _App = ({ Component, pageProps }: AppProps) => {
+const _App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
 	return (
 		<>

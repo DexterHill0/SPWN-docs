@@ -13,8 +13,6 @@
 	},
 
 	"errors": {
-		"unsupported_os": "This OS is not currently supported by SPWN — maybe in the future!",
-
 		"status_codes": {
 			"404": {
 				"title": "Looks like this page doesn't seems to exist — maybe you took a wrong turn?",
@@ -28,7 +26,6 @@
 			"title": "Woah, looks like there was an error.",
 			"subtitle": "Try going back <0>home</0>, otherwise, check back later to see if it's been resolved."
 		}
-		
 	},
 
 	"words": {

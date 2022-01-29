@@ -24,9 +24,11 @@ module.exports = {
 			}
 		},
 		fontSize: {
+			"xsm": "1.1rem",
 			"sm": "1.2rem",
-			"bs": "1.4rem",
-			"md": "1.5rem",
+			"md": "1.4rem",
+			"lg": "1.5rem",
+			"xlg": "2rem",
 		},
 		screens: {
 			"sm": { "max": "650px" },

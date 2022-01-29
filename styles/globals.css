@@ -33,34 +33,34 @@ body {
 
 @layer utilities {
 	.font-thin {
-		font-variation-settings: 'wght' 100;
+		font-variation-settings: "wght" 100;
 	}
 	.font-light {
-		font-variation-settings: 'wght' 300;
+		font-variation-settings: "wght" 300;
 	}
 	.font-normal {
-		font-variation-settings: 'wght' 400;
+		font-variation-settings: "wght" 400;
 	}
 	.font-bold {
-		font-variation-settings: 'wght' 700;
+		font-variation-settings: "wght" 700;
 	}
 	.font-black {
-		font-variation-settings: 'wght' 900;
+		font-variation-settings: "wght" 900;
 	}
 
 	.font-ital-thin {
-		font-variation-settings: 'ital' 1, 'wght' 100;
+		font-variation-settings: "ital" 1, "wght" 100;
 	}
 	.font-ital-light {
-		font-variation-settings: 'ital' 1, 'wght' 300;
+		font-variation-settings: "ital" 1, "wght" 300;
 	}
 	.font-ital-normal {
-		font-variation-settings: 'ital' 1, 'wght' 400;
+		font-variation-settings: "ital" 1, "wght" 400;
 	}
 	.font-ital-bold {
-		font-variation-settings: 'ital' 1, 'wght' 700;
+		font-variation-settings: "ital" 1, "wght" 700;
 	}
 	.font-ital-black {
-		font-variation-settings: 'ital' 1, 'wght' 900;
+		font-variation-settings: "ital" 1, "wght" 900;
 	}
 }

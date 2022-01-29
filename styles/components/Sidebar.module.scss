@@ -1,4 +1,4 @@
-@import "../variables.scss";
+// @import "../variables.scss";
 
 $sidebar-width: 4rem;
 
@@ -13,7 +13,7 @@ $sidebar-width: 4rem;
 .titleSelected {
 	width: 0.25rem;
 	height: 2rem;
-	background: $sidebar-selected;
+	// background: $sidebar-selected;
 	position: absolute;
 	right: 0;
 	margin-left: auto;
@@ -26,13 +26,13 @@ $sidebar-width: 4rem;
 }
 
 .sidebarButton {
-	background: $sidebar-button;
+	// background: $sidebar-button;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
 .sidebarContentContainer {
-	background: $sidebar-outline;
+	// background: $sidebar-outline;
 	transition: left 1s, border-right 1s;
 	position: relative;
 	height: 100%;

@@ -6,7 +6,8 @@
 		"dev:next": "next dev",
 		"build:server": "tsc --project tsconfig.server.json",
 		"build:next": "next build",
-		"build": "npm run build:next && npm run build:server"
+		"export:next": "npm run build:next && next export",
+		"build": "npm run export:next && npm run build:server"
 	},
 	"dependencies": {
 		"@types/react-dom": "^17.0.11",

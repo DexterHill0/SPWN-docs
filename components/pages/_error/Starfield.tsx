@@ -32,7 +32,7 @@ const Starfield: React.FC = () => {
 			this.x = random(-center.x, center.x);
 			this.y = random(-center.y, center.y);
 			this.z = random(0, center.x);
-			this.speed = random(0.05, 5);
+			this.speed = random(0.05, 3);
 			this.pz = this.z;
 		}
 

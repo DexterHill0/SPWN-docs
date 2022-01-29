@@ -31,7 +31,6 @@ const main = async () => {
 	//const trySpwnIt = express.Router();
 
 	spwnIt.get("*", (req: Request, res: Response) => {
-		console.log(req.subdomains);
 		return handle(req, res);
 	});
 
